@@ -12,7 +12,7 @@ export function Footer() {
           <img
             src="/SereneCollective-white-logo2.png"
             alt="The Serene Collective"
-            className="h-20 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
           <p className="mt-4 max-w-sm text-sm leading-relaxed">
             A veteran-operated real estate investment company based in Texas. We
