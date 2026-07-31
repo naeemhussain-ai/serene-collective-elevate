@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 import {
   ArrowRight,
   Building2,
@@ -10,13 +10,13 @@ import {
 
 import { HeroSlider } from "@/components/hero-slider";
 import { TrustBar } from "@/components/trust-bar";
-import { SectionReveal, StaggerGroup, StaggerItem } from "@/components/section-reveal";
+import { SectionReveal, StaggerGroup, StaggerItem, Float } from "@/components/section-reveal";
 import { StatCounter } from "@/components/stat-counter";
 import { RoiCalculator } from "@/components/roi-calculator";
 import { PortfolioShowcase } from "@/components/portfolio-showcase";
 import { Testimonials } from "@/components/testimonials";
 import { SERVICES } from "@/lib/site";
-import aboutImg from "@/assets/about.jpg";
+import aboutCover from "@/assets/about-cover.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Veteran-operated Texas real estate investment company. Smart real estate investments, with peace of mind — acquisition, management, partnerships, and exits.",
+          "Veteran-operated Texas real estate investment company. Smart real estate investments, with peace of mind   acquisition, management, partnerships, and exits.",
       },
       {
         property: "og:title",
@@ -45,15 +45,38 @@ export const Route = createFileRoute("/")({
 
 const ICONS = [Building2, LineChart, Handshake, DoorOpen];
 
+function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  return (
+    <motion.div
+      aria-hidden
+      className="bg-gold-500 fixed inset-x-0 top-0 z-[60] h-0.5 origin-left"
+      style={{ scaleX }}
+    />
+  );
+}
+
 function Index() {
   return (
     <>
+      <ScrollProgress />
       <HeroSlider />
       <TrustBar />
 
       {/* Statement band */}
-      <section className="bg-cream-100 py-24 lg:py-32">
-        <SectionReveal className="mx-auto max-w-4xl px-5 text-center lg:px-10">
+      <section className="bg-cream-100 relative overflow-hidden py-24 lg:py-32">
+        <motion.div
+          aria-hidden
+          className="bg-gold-500/20 absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full blur-[110px]"
+          animate={{ y: [0, 40, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <SectionReveal className="relative mx-auto max-w-4xl px-5 text-center lg:px-10">
           <p className="text-steel-500 eyebrow">Our Promise</p>
           <h2 className="text-navy-900 mt-6 text-4xl leading-tight font-semibold sm:text-5xl">
             Invest with Confidence, <span className="italic">Grow with Purpose</span>
@@ -61,7 +84,7 @@ function Index() {
           <div className="gold-rule mx-auto mt-8 w-32" />
           <p className="text-ink-900/75 mx-auto mt-8 max-w-2xl text-lg leading-relaxed">
             At The Serene Collective, we make real estate investing simple, secure,
-            and impactful — for you and for the communities we serve.
+            and impactful   for you and for the communities we serve.
           </p>
         </SectionReveal>
       </section>
@@ -71,22 +94,45 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-10">
           <SectionReveal>
             <div className="relative">
-              <img
-                src={aboutImg}
-                alt="Sunlit empty living space with floor-to-ceiling windows"
-                width={1200}
-                height={1000}
-                loading="lazy"
-                className="w-full rounded-md object-cover shadow-2xl"
+              <motion.div
+                aria-hidden
+                className="bg-gold-500/25 absolute -top-12 -left-12 -z-10 h-44 w-44 rounded-full blur-3xl"
+                animate={{ scale: [1, 1.25, 1], opacity: [0.6, 1, 0.6] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               />
-              <div className="bg-navy-900 absolute -right-4 -bottom-8 hidden rounded-md p-7 shadow-2xl sm:block">
-                <p className="text-gold-500 font-[family-name:var(--font-display)] text-3xl">
-                  <StatCounter value={12} suffix="+" />
-                </p>
-                <p className="text-steel-300 mt-1 text-xs tracking-widest uppercase">
-                  Years in Texas
-                </p>
-              </div>
+              <motion.div
+                aria-hidden
+                className="border-gold-500/40 absolute -top-10 -right-8 -z-10 h-48 w-48 rounded-full border-2 border-dashed"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                whileHover={{ scale: 1.03, transition: { duration: 0.4 } }}
+                animate={{ rotate: [0, 1.5, -1.5, 0] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                className="relative overflow-hidden rounded-md shadow-2xl shadow-[0_25px_90px_-20px_rgba(255,255,255,0.75)]"
+              >
+                <motion.img
+                  src={aboutCover}
+                  alt="The Serene Collective   elegant living space"
+                  width={1200}
+                  height={1000}
+                  loading="lazy"
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </motion.div>
+              <Float className="absolute -right-4 -bottom-8 hidden sm:block">
+                <div className="bg-navy-900 rounded-md p-7 shadow-2xl">
+                  <p className="text-gold-500 font-[family-name:var(--font-display)] text-3xl">
+                    <StatCounter value={12} suffix="+" />
+                  </p>
+                  <p className="text-steel-300 mt-1 text-xs tracking-widest uppercase">
+                    Years in Texas
+                  </p>
+                </div>
+              </Float>
             </div>
           </SectionReveal>
 
@@ -103,7 +149,7 @@ function Index() {
             </p>
             <p className="text-ink-900/75 mt-4 leading-relaxed">
               Founded on the principles of service, discipline, and integrity, we're
-              dedicated to building lasting value — not just for our investors, but
+              dedicated to building lasting value   not just for our investors, but
               for the neighborhoods we invest in.
             </p>
             <Link
@@ -118,15 +164,21 @@ function Index() {
       </section>
 
       {/* Services preview */}
-      <section className="navy-gradient py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
+      <section className="navy-gradient relative overflow-hidden py-24 lg:py-32">
+        <motion.div
+          aria-hidden
+          className="bg-gold-500/15 absolute top-0 right-0 h-96 w-96 translate-x-1/3 rounded-full blur-[120px]"
+          animate={{ y: [0, 60, 0], scale: [1, 1.15, 1] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
           <SectionReveal className="max-w-2xl">
             <p className="text-gold-500 eyebrow">What We Do</p>
             <h2 className="text-cream-50 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
               We acquire, manage, and grow real estate assets
             </h2>
             <p className="text-steel-300 mt-5 leading-relaxed">
-              With transparency, integrity, and results — across every stage of the
+              With transparency, integrity, and results   across every stage of the
               investment lifecycle.
             </p>
           </SectionReveal>
@@ -136,13 +188,20 @@ function Index() {
               const Icon = ICONS[i]!;
               return (
                 <StaggerItem key={service.slug}>
-                  <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
+                  <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }} className="h-full">
                     <Link
                       to="/services"
                       hash={service.slug}
-                      className="border-navy-700 bg-navy-900/60 hover:border-gold-500/60 group flex h-full flex-col rounded-md border p-7 transition-colors"
+                      className="border-navy-700 bg-navy-900/60 hover:border-gold-500/60 group relative flex h-full flex-col overflow-hidden rounded-md border p-7 transition-colors"
                     >
-                      <Icon className="text-gold-500 h-8 w-8" />
+                      <span className="bg-gold-500 absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100" />
+                      <motion.span
+                        className="text-gold-500 inline-block w-fit"
+                        whileHover={{ rotate: 8, scale: 1.12 }}
+                        transition={{ type: "spring", stiffness: 320, damping: 16 }}
+                      >
+                        <Icon className="h-8 w-8" />
+                      </motion.span>
                       <h3 className="text-cream-50 mt-6 text-lg tracking-wide uppercase">
                         {service.title}
                       </h3>
@@ -172,18 +231,20 @@ function Index() {
             { value: 1.4, prefix: "$", suffix: "B", decimals: 1, label: "Assets transacted" },
           ].map((stat, i) => (
             <SectionReveal key={stat.label} delay={i * 0.08} className="text-center">
-              <p className="text-navy-900 font-[family-name:var(--font-display)] text-5xl font-semibold">
-                <StatCounter
-                  value={stat.value}
-                  prefix={stat.prefix ?? ""}
-                  suffix={stat.suffix ?? ""}
-                  decimals={stat.decimals ?? 0}
-                />
-              </p>
-              <div className="gold-rule mx-auto mt-5 w-14" />
-              <p className="text-ink-900/70 mt-5 text-sm tracking-wider uppercase">
-                {stat.label}
-              </p>
+              <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="group">
+                <p className="text-navy-900 font-[family-name:var(--font-display)] text-5xl font-semibold">
+                  <StatCounter
+                    value={stat.value}
+                    prefix={stat.prefix ?? ""}
+                    suffix={stat.suffix ?? ""}
+                    decimals={stat.decimals ?? 0}
+                  />
+                </p>
+                <div className="gold-rule mx-auto mt-5 w-14 transition-all duration-500 group-hover:w-24" />
+                <p className="text-ink-900/70 mt-5 text-sm tracking-wider uppercase">
+                  {stat.label}
+                </p>
+              </motion.div>
             </SectionReveal>
           ))}
         </div>
@@ -232,8 +293,14 @@ function Index() {
       </section>
 
       {/* Testimonials */}
-      <section className="navy-gradient py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
+      <section className="navy-gradient relative overflow-hidden py-24 lg:py-32">
+        <motion.div
+          aria-hidden
+          className="bg-gold-500/15 absolute bottom-0 left-0 h-80 w-80 -translate-x-1/3 rounded-full blur-[120px]"
+          animate={{ y: [0, -50, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
           <SectionReveal>
             <Testimonials />
           </SectionReveal>
@@ -257,13 +324,19 @@ export function CtaBand() {
           honestly whether we're the right fit.
         </p>
         <motion.div
-          whileHover={{ scale: 1.03 }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
-          className="mt-10 inline-block"
+          className="relative mt-10 inline-block"
         >
+          <motion.span
+            aria-hidden
+            className="bg-gold-500/40 absolute -inset-2 rounded-sm blur-lg"
+            animate={{ opacity: [0.4, 0.85, 0.4], scale: [1, 1.08, 1] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
           <Link
             to="/contact"
-            className="bg-gold-500 text-navy-950 inline-flex items-center gap-2 rounded-sm px-8 py-4 text-xs font-bold tracking-[0.18em] uppercase"
+            className="bg-gold-500 text-navy-950 relative inline-flex items-center gap-2 rounded-sm px-8 py-4 text-xs font-bold tracking-[0.18em] uppercase"
           >
             Get a Free Consultation <ArrowRight className="h-4 w-4" />
           </Link>

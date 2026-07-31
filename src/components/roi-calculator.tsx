@@ -31,7 +31,7 @@ export function RoiCalculator() {
       </div>
       <p className="text-steel-300 mt-3 text-sm">
         Modelled at our historical 12.2% annualised portfolio growth. Illustrative
-        only — not a guarantee of future performance.
+        only   not a guarantee of future performance.
       </p>
 
       <div className="mt-9 space-y-9">

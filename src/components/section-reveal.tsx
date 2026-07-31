@@ -79,3 +79,30 @@ export function StaggerItem({
     </motion.div>
   );
 }
+
+export function Float({
+  children,
+  className,
+  duration = 6,
+  distance = 10,
+}: {
+  children: ReactNode;
+  className?: string;
+  duration?: number;
+  distance?: number;
+}) {
+  const reduce = useReducedMotion();
+  return (
+    <motion.div
+      className={className}
+      {...(reduce
+        ? {}
+        : {
+            animate: { y: [0, -distance, 0] },
+            transition: { duration, repeat: Infinity, ease: "easeInOut" as const },
+          })}
+    >
+      {children}
+    </motion.div>
+  );
+}

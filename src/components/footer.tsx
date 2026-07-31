@@ -13,7 +13,7 @@ export function Footer() {
           <Wordmark light />
           <p className="mt-6 max-w-sm text-sm leading-relaxed">
             A veteran-operated real estate investment company based in Texas. We
-            make investing simple, secure, and impactful — for you and for the
+            make investing simple, secure, and impactful   for you and for the
             communities we serve.
           </p>
         </div>

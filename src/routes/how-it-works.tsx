@@ -10,6 +10,7 @@ import { RoiCalculator } from "@/components/roi-calculator";
 import { CtaBand } from "@/routes/index";
 import { PROCESS_STEPS } from "@/lib/site";
 import financingImg from "@/assets/financing.jpg";
+import howItWorksCover from "@/assets/how-it-works.jpg";
 
 export const Route = createFileRoute("/how-it-works")({
   component: HowItWorks,
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/how-it-works")({
       {
         name: "description",
         content:
-          "Consultation, acquisition, management, growth — plus flexible in-house financing. A clear four-step path to a disciplined Texas real estate portfolio.",
+          "Consultation, acquisition, management, growth   plus flexible in-house financing. A clear four-step path to a disciplined Texas real estate portfolio.",
       },
       { property: "og:title", content: "How It Works | The Serene Collective" },
       {
@@ -53,6 +54,7 @@ function HowItWorks() {
   return (
     <>
       <PageHero
+        image={howItWorksCover}
         eyebrow="How It Works"
         title="A clear, calm, results-driven path from first conversation to compounding growth."
         intro="Four steps, no jargon, no surprises. You always know where your capital is and what happens next."

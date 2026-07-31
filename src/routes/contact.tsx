@@ -20,6 +20,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import heroImg from "@/assets/hero-3.jpg";
+import contactCover from "@/assets/contact-cover.jpg";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
@@ -78,9 +79,10 @@ function Contact() {
   return (
     <>
       <PageHero
+        image={contactCover}
         eyebrow="Let's Talk"
         title="Tell us where you want to go. We'll tell you how to get there."
-        intro="Share your investment goals and a member of our team will reach out within one business day — no pressure, no obligation."
+        intro="Share your investment goals and a member of our team will reach out within one business day   no pressure, no obligation."
       />
 
       <section className="bg-cream-50 py-24 lg:py-32">

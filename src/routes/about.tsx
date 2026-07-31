@@ -7,6 +7,7 @@ import { CtaBand } from "@/routes/index";
 import { VALUES } from "@/lib/site";
 import aboutImg from "@/assets/about.jpg";
 import heroImg from "@/assets/hero-1.jpg";
+import cover2 from "@/assets/about--cover2.jpg";
 
 export const Route = createFileRoute("/about")({
   component: About,
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "A veteran-operated real estate investment company in Texas, founded on service, discipline, and integrity — and rooted in community impact.",
+          "A veteran-operated real estate investment company in Texas, founded on service, discipline, and integrity   and rooted in community impact.",
       },
       { property: "og:title", content: "About | The Serene Collective" },
       {
@@ -42,8 +43,9 @@ function About() {
   return (
     <>
       <PageHero
+        image={cover2}
         eyebrow="Who We Are"
-        title="More than investors — neighbors, problem solvers, and stewards of growth."
+        title="More than investors   neighbors, problem solvers, and stewards of growth."
         intro="The Serene Collective is a veteran-operated real estate investment company proudly based in Texas, founded on the principles of service, discipline, and integrity."
       />
 
@@ -59,7 +61,7 @@ function About() {
                 We believe real estate investing doesn't have to be stressful. We
                 simplify the process, mitigate risk, and help our clients grow lasting
                 wealth. Founded on the principles of service, discipline, and
-                integrity, we're dedicated to building lasting value — not just for
+                integrity, we're dedicated to building lasting value   not just for
                 our investors, but for the neighborhoods we invest in.
               </p>
               <p>
@@ -70,7 +72,7 @@ function About() {
                 the process clear, calm, and results-driven.
               </p>
               <p>
-                At our core, we're more than investors — we're neighbors, problem
+                At our core, we're more than investors   we're neighbors, problem
                 solvers, and stewards of growth. With every project, we aim to serve
                 with the same commitment and care that defined our military service.
               </p>

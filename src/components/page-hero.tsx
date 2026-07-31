@@ -5,13 +5,32 @@ export function PageHero({
   eyebrow,
   title,
   intro,
+  image,
 }: {
   eyebrow: string;
   title: string;
   intro: string;
+  image?: string;
 }) {
   return (
     <section className="navy-gradient relative overflow-hidden pt-40 pb-24 lg:pt-48 lg:pb-32">
+      {image && (
+        <>
+          <img
+            src={image}
+            alt=""
+            aria-hidden
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="bg-navy-950/45 absolute inset-0" />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-[radial-gradient(50%_55%_at_50%_50%,rgba(255,251,235,0.16),transparent_70%)]"
+          />
+          <div className="from-navy-950 absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t to-transparent" />
+        </>
+      )}
       <div className="text-gold-500/10 pointer-events-none absolute -top-10 right-0 hidden lg:block">
         <KeyMark className="h-[26rem] w-[26rem]" animate />
       </div>

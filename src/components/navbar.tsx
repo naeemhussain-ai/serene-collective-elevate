@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Menu, ArrowRight } from "lucide-react";
 
 import { NAV_ITEMS } from "@/lib/site";
-import { Wordmark } from "@/components/brand-mark";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 
 export function Navbar() {
@@ -22,9 +21,9 @@ export function Navbar() {
     <motion.header
       initial={false}
       animate={{
-        backgroundColor: solid ? "oklch(0.257 0.045 250.5 / 0.94)" : "oklch(0.257 0.045 250.5 / 0)",
+        backgroundColor: solid ? "oklch(0.42 0.062 254 / 0.92)" : "oklch(0.42 0.062 254 / 0)",
         boxShadow: solid
-          ? "0 12px 40px -20px oklch(0.257 0.045 250.5 / 0.9)"
+          ? "0 12px 40px -20px oklch(0.42 0.062 254 / 0.5)"
           : "0 0 0 0 transparent",
         backdropFilter: solid ? "blur(14px)" : "blur(0px)",
       }}
@@ -33,10 +32,14 @@ export function Navbar() {
     >
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-5 lg:px-10"
+        className="mx-auto flex h-32 max-w-7xl items-center justify-between gap-6 px-5 lg:px-10"
       >
         <Link to="/" className="shrink-0" aria-label="The Serene Collective home">
-          <Wordmark light />
+          <img
+            src="/SereneCollective-logo-1.png"
+            alt="The Serene Collective"
+            className="h-32 w-auto object-contain"
+          />
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
@@ -80,11 +83,15 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="bg-navy-950 border-navy-700 flex w-[86vw] max-w-sm flex-col p-0"
+            className="flex w-[86vw] max-w-sm flex-col border-none p-0 bg-[oklch(0.42_0.062_254)]"
           >
             <SheetTitle className="sr-only">Navigation</SheetTitle>
             <div className="border-navy-700 border-b px-6 py-6">
-              <Wordmark light />
+              <img
+                src="/SereneCollective-logo-1.png"
+                alt="The Serene Collective"
+                className="h-32 w-auto object-contain"
+              />
             </div>
             <ul className="flex-1 px-3 py-4">
               {NAV_ITEMS.map((item, i) => (

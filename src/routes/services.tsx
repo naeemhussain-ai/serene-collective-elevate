@@ -9,6 +9,7 @@ import acquisitionImg from "@/assets/service-acquisition.jpg";
 import portfolioImg from "@/assets/service-portfolio.jpg";
 import partnershipsImg from "@/assets/service-partnerships.jpg";
 import exitImg from "@/assets/service-exit.jpg";
+import servicesCover from "@/assets/services-cover.jpg";
 
 export const Route = createFileRoute("/services")({
   component: Services,
@@ -18,7 +19,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Property acquisition, portfolio management, strategic partnerships, and exit strategies — handled end to end by a veteran-operated Texas team.",
+          "Property acquisition, portfolio management, strategic partnerships, and exit strategies   handled end to end by a veteran-operated Texas team.",
       },
       { property: "og:title", content: "Services | The Serene Collective" },
       {
@@ -43,9 +44,10 @@ function Services() {
   return (
     <>
       <PageHero
+        image={servicesCover}
         eyebrow="Our Services"
         title="We acquire, manage, and grow real estate assets with transparency, integrity, and results."
-        intro="Four pillars covering every stage of the investment lifecycle — from the first walk-through to the final closing statement."
+        intro="Four pillars covering every stage of the investment lifecycle   from the first walk-through to the final closing statement."
       />
 
       {SERVICES.map((service, i) => {

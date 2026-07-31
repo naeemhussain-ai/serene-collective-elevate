@@ -23,7 +23,7 @@ export const SERVICES = [
     summary:
       "Disciplined sourcing and underwriting of high-quality residential assets across Texas markets.",
     detail:
-      "We underwrite every deal like it is our own capital. Off-market sourcing, on-the-ground inspections, and conservative assumptions mean you enter each position with a margin of safety — never a bidding war.",
+      "We underwrite every deal like it is our own capital. Off-market sourcing, on-the-ground inspections, and conservative assumptions mean you enter each position with a margin of safety   never a bidding war.",
     points: [
       "Off-market and pre-foreclosure sourcing",
       "Conservative, third-party validated underwriting",
@@ -36,7 +36,7 @@ export const SERVICES = [
     summary:
       "Hands-off operations, tenant care, and transparent reporting on every asset you hold with us.",
     detail:
-      "Leasing, maintenance, compliance, and accounting are handled end to end. You receive clear monthly reporting on occupancy, cash flow, and asset value — no chasing, no surprises.",
+      "Leasing, maintenance, compliance, and accounting are handled end to end. You receive clear monthly reporting on occupancy, cash flow, and asset value   no chasing, no surprises.",
     points: [
       "Full-service leasing and tenant relations",
       "Preventative maintenance programs",
@@ -60,9 +60,9 @@ export const SERVICES = [
     slug: "exit-strategies",
     title: "Exit Strategies",
     summary:
-      "Planned, tax-aware exits designed before acquisition — never improvised after the fact.",
+      "Planned, tax-aware exits designed before acquisition   never improvised after the fact.",
     detail:
-      "Every asset enters our portfolio with a defined hold period and two viable exits. Refinance, 1031 exchange, or disposition — we model the outcome long before the market forces a decision.",
+      "Every asset enters our portfolio with a defined hold period and two viable exits. Refinance, 1031 exchange, or disposition   we model the outcome long before the market forces a decision.",
     points: [
       "Exit modeled at acquisition, not at sale",
       "1031 exchange and refinance planning",
@@ -75,7 +75,7 @@ export const PROCESS_STEPS = [
   {
     title: "Consultation",
     caption: "Understanding your goals",
-    body: "We start with a conversation — capital position, risk tolerance, timeline, and what you actually want this portfolio to do for your family.",
+    body: "We start with a conversation   capital position, risk tolerance, timeline, and what you actually want this portfolio to do for your family.",
   },
   {
     title: "Acquisition",
@@ -90,7 +90,7 @@ export const PROCESS_STEPS = [
   {
     title: "Growth",
     caption: "Long-term ROI & reinvestment strategies",
-    body: "Equity is recycled deliberately — refinance, exchange, or expand — compounding your position while risk stays measured.",
+    body: "Equity is recycled deliberately   refinance, exchange, or expand   compounding your position while risk stays measured.",
   },
 ] as const;
 
@@ -178,6 +178,6 @@ export const VALUES = [
   },
   {
     title: "Integrity",
-    body: "Plain numbers, plain language. If a deal is not right for you, we say so — even when it costs us the transaction.",
+    body: "Plain numbers, plain language. If a deal is not right for you, we say so   even when it costs us the transaction.",
   },
 ] as const;

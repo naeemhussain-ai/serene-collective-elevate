@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 
-/** Ornate gold key — the brand's signature motif. */
+/** Ornate gold key   the brand's signature motif. */
 export function KeyMark({
   className = "h-10 w-10",
   animate = false,
