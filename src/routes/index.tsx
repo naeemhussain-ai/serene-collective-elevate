@@ -13,6 +13,7 @@ import { TrustBar } from "@/components/trust-bar";
 import { SectionReveal, StaggerGroup, StaggerItem, Float } from "@/components/section-reveal";
 import { StatCounter } from "@/components/stat-counter";
 import { ContactForm } from "@/components/contact-form";
+import { FinancingSection } from "@/components/financing-section";
 import { SERVICES } from "@/lib/site";
 import aboutCover from "@/assets/about-cover.jpg";
 
@@ -77,12 +78,12 @@ function Index() {
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
         <SectionReveal className="relative mx-auto max-w-4xl px-5 text-center lg:px-10">
-          <p className="text-steel-500 eyebrow">Our Promise</p>
+          <p className="text-gold-500 eyebrow">Our Promise</p>
           <h2 className="text-navy-900 mt-6 text-4xl leading-tight font-semibold sm:text-5xl">
             Invest with Confidence, <span className="italic">Grow with Purpose</span>
           </h2>
           <div className="gold-rule mx-auto mt-8 w-32" />
-          <p className="text-ink-900/75 mx-auto mt-8 max-w-2xl text-lg leading-relaxed">
+          <p className="text-ink-900/90 mx-auto mt-8 max-w-2xl text-lg leading-relaxed">
             At The Serene Collective, we make real estate investing simple, secure,
             and impactful   for you and for the communities we serve.
           </p>
@@ -126,7 +127,7 @@ function Index() {
                   <p className="text-gold-500 font-[family-name:var(--font-display)] text-3xl">
                     <StatCounter value={12} suffix="+" />
                   </p>
-                  <p className="text-steel-300 mt-1 text-xs tracking-widest uppercase">
+                  <p className="text-cream-100 mt-1 text-xs tracking-widest uppercase">
                     Years in Texas
                   </p>
                 </div>
@@ -138,13 +139,13 @@ function Index() {
             <h2 className="text-navy-900 text-3xl leading-tight font-semibold sm:text-4xl">
               Veteran-operated. Texas based. Built on service.
             </h2>
-            <p className="text-ink-900/75 mt-6 leading-relaxed">
+            <p className="text-ink-900/90 mt-6 leading-relaxed">
               The Serene Collective is a veteran-operated real estate investment
               company proudly based in Texas. We believe real estate investing
               doesn't have to be stressful. We simplify the process, mitigate risk,
               and help our clients grow lasting wealth.
             </p>
-            <p className="text-ink-900/75 mt-4 leading-relaxed">
+            <p className="text-ink-900/90 mt-4 leading-relaxed">
               Founded on the principles of service, discipline, and integrity, we're
               dedicated to building lasting value   not just for our investors, but
               for the neighborhoods we invest in.
@@ -174,7 +175,7 @@ function Index() {
             <h2 className="text-cream-50 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
               We acquire, manage, and grow real estate assets
             </h2>
-            <p className="text-steel-300 mt-5 leading-relaxed">
+            <p className="text-cream-100 mt-5 leading-relaxed">
               With transparency, integrity, and results   across every stage of the
               investment lifecycle.
             </p>
@@ -202,7 +203,7 @@ function Index() {
                       <h3 className="text-cream-50 mt-6 text-lg tracking-wide uppercase">
                         {service.title}
                       </h3>
-                      <p className="text-steel-300 mt-4 flex-1 text-sm leading-relaxed">
+                      <p className="text-cream-100 mt-4 flex-1 text-sm leading-relaxed">
                         {service.summary}
                       </p>
                       <span className="text-gold-500 mt-6 inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase">
@@ -238,7 +239,7 @@ function Index() {
                   />
                 </p>
                 <div className="gold-rule mx-auto mt-5 w-14 transition-all duration-500 group-hover:w-24" />
-                <p className="text-ink-900/70 mt-5 text-sm tracking-wider uppercase">
+                <p className="text-ink-900/85 mt-5 text-sm tracking-wider uppercase">
                   {stat.label}
                 </p>
               </motion.div>
@@ -247,16 +248,18 @@ function Index() {
         </div>
       </section>
 
+      <FinancingSection />
+
       {/* Calculator (hidden, set SHOW_CALCULATOR to true to re-enable) */}
       {SHOW_CALCULATOR && (
         <section className="bg-cream-50 py-24 lg:py-32">
           <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-10">
             <SectionReveal>
-              <p className="text-steel-500 eyebrow">Plan Ahead</p>
+              <p className="text-gold-500 eyebrow">Plan Ahead</p>
               <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
                 See what disciplined investing could return
               </h2>
-              <p className="text-ink-900/75 mt-6 leading-relaxed">
+              <p className="text-ink-900/90 mt-6 leading-relaxed">
                 Move the sliders to model a position against our historical portfolio
                 performance. Then let's talk about what a real, personalised plan looks
                 like for your capital and timeline.
@@ -282,7 +285,7 @@ function Index() {
           <h2 className="text-cream-50 text-3xl leading-tight font-semibold sm:text-4xl">
             Ready to invest with <span className="text-gold-500 italic">peace of mind</span>?
           </h2>
-          <p className="text-steel-300 mx-auto mt-5 max-w-xl leading-relaxed">
+          <p className="text-cream-100 mx-auto mt-5 max-w-xl leading-relaxed">
             Book a free, no-pressure consultation. We'll review your goals and tell you
             honestly whether we're the right fit.
           </p>
@@ -302,7 +305,7 @@ export function CtaBand() {
         <h2 className="text-cream-50 text-3xl leading-tight font-semibold sm:text-4xl">
           Ready to invest with <span className="text-gold-500 italic">peace of mind</span>?
         </h2>
-        <p className="text-steel-300 mx-auto mt-5 max-w-xl leading-relaxed">
+        <p className="text-cream-100 mx-auto mt-5 max-w-xl leading-relaxed">
           Book a free, no-pressure consultation. We'll review your goals and tell you
           honestly whether we're the right fit.
         </p>
@@ -320,7 +323,7 @@ export function CtaBand() {
           <Link
             to="/"
             hash="contact"
-            className="bg-gold-500 text-navy-950 relative inline-flex items-center gap-2 rounded-sm px-8 py-4 text-xs font-bold tracking-[0.18em] uppercase"
+            className="gold-gradient text-navy-950 relative inline-flex items-center gap-2 rounded-sm px-8 py-4 text-xs font-bold tracking-[0.18em] uppercase"
           >
             Get a Free Consultation <ArrowRight className="h-4 w-4" />
           </Link>

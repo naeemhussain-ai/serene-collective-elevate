@@ -56,7 +56,7 @@ function Contact() {
                 <li className="flex items-start gap-4">
                   <Mail className="text-gold-500 mt-0.5 h-5 w-5 shrink-0" />
                   <div>
-                    <p className="text-steel-500 text-xs tracking-widest uppercase">
+                    <p className="text-gold-500 text-xs tracking-widest uppercase">
                       Email
                     </p>
                     <a
@@ -70,7 +70,7 @@ function Contact() {
                 <li className="flex items-start gap-4">
                   <Phone className="text-gold-500 mt-0.5 h-5 w-5 shrink-0" />
                   <div>
-                    <p className="text-steel-500 text-xs tracking-widest uppercase">
+                    <p className="text-gold-500 text-xs tracking-widest uppercase">
                       Phone
                     </p>
                     <a
@@ -84,7 +84,7 @@ function Contact() {
                 <li className="flex items-start gap-4">
                   <MapPin className="text-gold-500 mt-0.5 h-5 w-5 shrink-0" />
                   <div>
-                    <p className="text-steel-500 text-xs tracking-widest uppercase">
+                    <p className="text-gold-500 text-xs tracking-widest uppercase">
                       Serving
                     </p>
                     <p className="text-cream-50 mt-1">{SITE.location}</p>

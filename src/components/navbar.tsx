@@ -53,7 +53,7 @@ export function Navbar() {
                   className={`relative block px-4 py-2 text-sm font-medium transition-colors ${
                     active
                       ? "text-cream-50"
-                      : "text-steel-300 hover:text-cream-50"
+                      : "text-cream-100 hover:text-gold-500"
                   }`}
                 >
                   {item.label}
@@ -116,7 +116,7 @@ export function Navbar() {
                 to="/"
                 hash="contact"
                 onClick={() => setOpen(false)}
-                className="bg-gold-500 text-navy-950 flex w-full items-center justify-center gap-2 rounded-sm px-5 py-4 text-sm font-bold tracking-wide uppercase"
+                className="gold-gradient text-navy-950 flex w-full items-center justify-center gap-2 rounded-sm px-5 py-4 text-sm font-bold tracking-wide uppercase"
               >
                 Get a Free Consultation <ArrowRight className="h-4 w-4" />
               </Link>
@@ -134,7 +134,7 @@ function ConsultCta() {
       <Link
         to="/"
         hash="contact"
-        className="bg-gold-500 text-navy-950 hover:shadow-gold-500/30 group inline-flex items-center gap-2 rounded-sm px-5 py-3 text-[0.7rem] font-bold tracking-[0.18em] uppercase transition-shadow hover:shadow-lg"
+        className="gold-gradient text-navy-950 hover:shadow-gold-500/30 group inline-flex items-center gap-2 rounded-sm px-5 py-3 text-[0.7rem] font-bold tracking-[0.18em] uppercase transition-shadow hover:shadow-lg"
       >
         Free Consultation
         <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

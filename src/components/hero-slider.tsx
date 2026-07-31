@@ -6,6 +6,7 @@ import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
+import financingImg from "@/assets/financing.jpg";
 import keyImg from "@/assets/key-no-bg.png";
 
 const LOGO1 = `${import.meta.env.BASE_URL}SereneCollective-logo-1.png`;
@@ -15,7 +16,7 @@ const SLIDES = [
   { src: hero2, alt: "Modern kitchen with marble island and morning light", logo: LOGO1, h: "h-24" },
   { src: hero3, alt: "Modern Texas home exterior at golden hour", logo: LOGO1, h: "h-24" },
   { src: hero4, alt: "Sunlit staircase and open hallway in a luxury home", logo: LOGO1, h: "h-24" },
-  { src: "/blue-dining.jpg", alt: "Blue dining room with elegant interior", logo: LOGO1, h: "h-24" },
+  { src: financingImg, alt: "Modern suburban home exterior lit at dusk", logo: LOGO1, h: "h-24" },
 ];
 
 const DURATION = 3000;
@@ -145,16 +146,18 @@ export function HeroSlider() {
             </motion.div>
           </Item>
           <Item>
-            <p className="text-steel-300 eyebrow">Veteran-Operated · Texas</p>
+            <p className="text-gold-500 eyebrow">Veteran-Operated · Texas</p>
           </Item>
           <Item>
-            <h1 className="text-cream-50 mt-5 text-[2.6rem] leading-[1.05] font-semibold sm:text-6xl lg:text-[4.4rem]">
+            <h1 className="text-cream-50 mt-5 text-[2.6rem] leading-[1.25] font-semibold sm:text-6xl lg:text-[4.4rem]">
               Smart Real Estate Investments,{" "}
-              <span className="gold-shimmer italic">With Peace of Mind</span>
+              <span className="gold-shimmer italic">
+                With Peace of Min<span className="-ml-[0.06em] mr-[0.18em]">d</span>
+              </span>
             </h1>
           </Item>
           <Item>
-            <p className="text-steel-300 mt-7 mx-auto max-w-xl text-lg leading-relaxed">
+            <p className="text-cream-50 mt-7 mx-auto max-w-xl text-lg font-medium leading-relaxed">
               We acquire, manage, and grow real estate assets with transparency,
               integrity, and results   for you and for the communities we serve.
             </p>
@@ -165,7 +168,7 @@ export function HeroSlider() {
                 <Link
                   to="/"
                   hash="contact"
-                  className="bg-gold-500 text-navy-950 inline-flex items-center gap-2 rounded-sm px-7 py-4 text-xs font-bold tracking-[0.18em] uppercase shadow-xl"
+                  className="gold-gradient text-navy-950 inline-flex items-center gap-2 rounded-sm px-7 py-4 text-xs font-bold tracking-[0.18em] uppercase shadow-xl"
                 >
                   Get a Free Consultation
                 </Link>

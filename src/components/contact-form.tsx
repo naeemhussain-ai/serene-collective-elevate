@@ -56,7 +56,7 @@ export function ContactForm({ variant = "light" }: { variant?: "light" | "dark" 
     : "";
   const labelClass = dark ? "text-cream-50" : "";
   const buttonClass = dark
-    ? "bg-gold-500 text-navy-950 hover:bg-gold-400"
+    ? "gold-gradient text-navy-950 hover:brightness-105"
     : "bg-navy-900 text-cream-50 hover:bg-navy-700";
 
   return (
@@ -87,7 +87,7 @@ export function ContactForm({ variant = "light" }: { variant?: "light" | "dark" 
           <p
             className={cn(
               "mx-auto mt-4 max-w-sm",
-              dark ? "text-steel-300" : "text-ink-900/70",
+              dark ? "text-cream-100" : "text-ink-900/85",
             )}
           >
             Thank you. A member of our team will be in touch within one business day.

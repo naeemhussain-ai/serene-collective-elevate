@@ -55,7 +55,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-steel-300 mt-7 max-w-2xl text-lg leading-relaxed"
+          className="text-cream-100 mt-7 max-w-2xl text-lg leading-relaxed"
         >
           {intro}
         </motion.p>

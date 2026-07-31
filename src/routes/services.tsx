@@ -3,6 +3,7 @@ import { Building2, LineChart, Handshake, DoorOpen, Check } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SectionReveal } from "@/components/section-reveal";
+import { FinancingSection } from "@/components/financing-section";
 import { CtaBand } from "@/routes/index";
 import { SERVICES } from "@/lib/site";
 import acquisitionImg from "@/assets/service-acquisition.jpg";
@@ -78,19 +79,19 @@ function Services() {
                 <div className="bg-navy-900 text-gold-500 flex h-14 w-14 items-center justify-center rounded-md">
                   <Icon className="h-6 w-6" />
                 </div>
-                <p className="text-steel-500 eyebrow mt-7">
+                <p className="text-gold-500 eyebrow mt-7">
                   Pillar {String(i + 1).padStart(2, "0")}
                 </p>
                 <h2 className="text-navy-900 mt-4 text-3xl leading-tight font-semibold sm:text-4xl">
                   {service.title}
                 </h2>
-                <p className="text-ink-900/75 mt-6 leading-relaxed">{service.summary}</p>
-                <p className="text-ink-900/75 mt-4 leading-relaxed">{service.detail}</p>
+                <p className="text-ink-900/90 mt-6 leading-relaxed">{service.summary}</p>
+                <p className="text-ink-900/90 mt-4 leading-relaxed">{service.detail}</p>
                 <ul className="mt-8 space-y-3">
                   {service.points.map((point) => (
                     <li key={point} className="flex items-start gap-3">
                       <Check className="text-gold-500 mt-1 h-4 w-4 shrink-0" />
-                      <span className="text-ink-900/80 text-sm">{point}</span>
+                      <span className="text-ink-900/95 text-sm">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -99,6 +100,8 @@ function Services() {
           </section>
         );
       })}
+
+      <FinancingSection />
 
       <CtaBand />
     </>

@@ -62,7 +62,7 @@ export function Wordmark({ light = false }: { light?: boolean }) {
         </span>
         <span
           className={`mt-1 block text-[0.6rem] font-semibold tracking-[0.3em] uppercase ${
-            light ? "text-steel-300" : "text-steel-500"
+            light ? "text-cream-100" : "text-gold-500"
           }`}
         >
           Real Estate Investments

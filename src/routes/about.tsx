@@ -46,11 +46,11 @@ function About() {
       <section className="bg-cream-50 py-24 lg:py-32">
         <div className="mx-auto grid max-w-7xl items-start gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-10">
           <SectionReveal>
-            <p className="text-steel-500 eyebrow">Our Story</p>
+            <p className="text-gold-500 eyebrow">Our Story</p>
             <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
               Investing shouldn't be stressful
             </h2>
-            <div className="text-ink-900/75 mt-7 space-y-5 leading-relaxed">
+            <div className="text-ink-900/90 mt-7 space-y-5 leading-relaxed">
               <p>
                 We believe real estate investing doesn't have to be stressful. We
                 simplify the process, mitigate risk, and help our clients grow lasting
@@ -111,7 +111,7 @@ function About() {
                   <article className="border-navy-700 bg-navy-900/60 h-full rounded-md border p-8">
                     <Icon className="text-gold-500 h-8 w-8" />
                     <h3 className="text-cream-50 mt-6 text-2xl">{value.title}</h3>
-                    <p className="text-steel-300 mt-4 text-sm leading-relaxed">
+                    <p className="text-cream-100 mt-4 text-sm leading-relaxed">
                       {value.body}
                     </p>
                   </article>

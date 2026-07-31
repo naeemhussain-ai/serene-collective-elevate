@@ -5,7 +5,7 @@ import { NAV_ITEMS, SERVICES, SITE } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-navy-950 text-steel-300">
+    <footer className="bg-navy-950 text-cream-100">
       <div className="gold-rule" />
       <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 pt-16 pb-20 md:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div className="lg:col-span-2">
@@ -61,7 +61,7 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {SITE.name}. All rights reserved.
         </p>
-        <p className="text-steel-500">
+        <p className="text-gold-500">
           {SERVICES.length} service pillars · Veteran-operated · Texas
         </p>
       </div>

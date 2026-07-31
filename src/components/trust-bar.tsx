@@ -18,7 +18,7 @@ export function TrustBar() {
       >
         {BADGES.map(({ icon: Icon, label }) => (
           <StaggerItem key={label}>
-            <div className="text-steel-300 hover:text-cream-50 flex items-center gap-2.5 transition-colors">
+            <div className="text-cream-100 hover:text-gold-500 flex items-center gap-2.5 transition-colors">
               <Icon className="text-gold-500 h-4 w-4" />
               <span className="text-[0.68rem] font-semibold tracking-[0.2em] uppercase">
                 {label}
