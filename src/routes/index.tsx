@@ -12,8 +12,6 @@ import { HeroSlider } from "@/components/hero-slider";
 import { TrustBar } from "@/components/trust-bar";
 import { SectionReveal, StaggerGroup, StaggerItem, Float } from "@/components/section-reveal";
 import { StatCounter } from "@/components/stat-counter";
-import { RoiCalculator } from "@/components/roi-calculator";
-import { PortfolioShowcase } from "@/components/portfolio-showcase";
 import { ContactForm } from "@/components/contact-form";
 import { SERVICES } from "@/lib/site";
 import aboutCover from "@/assets/about-cover.jpg";
@@ -278,21 +276,6 @@ function Index() {
         </section>
       )}
 
-      {/* Portfolio */}
-      <section className="bg-cream-100 py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <SectionReveal className="max-w-2xl">
-            <p className="text-steel-500 eyebrow">Featured Acquisitions</p>
-            <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
-              A portfolio built one disciplined decision at a time
-            </h2>
-          </SectionReveal>
-          <SectionReveal delay={0.1} className="mt-12">
-            <PortfolioShowcase />
-          </SectionReveal>
-        </div>
-      </section>
-
       {/* Contact form CTA */}
       <section className="bg-cream-50 py-24 lg:py-28">
         <SectionReveal className="bg-navy-950 mx-auto max-w-5xl rounded-lg px-8 py-16 text-center shadow-2xl sm:px-14">
@@ -335,7 +318,7 @@ export function CtaBand() {
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
           <Link
-            to="/contact"
+            to="/"
             className="bg-gold-500 text-navy-950 relative inline-flex items-center gap-2 rounded-sm px-8 py-4 text-xs font-bold tracking-[0.18em] uppercase"
           >
             Get a Free Consultation <ArrowRight className="h-4 w-4" />

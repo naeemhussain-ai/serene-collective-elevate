@@ -163,7 +163,7 @@ export function HeroSlider() {
             <div className="mt-10 flex flex-wrap gap-4">
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <Link
-                  to="/contact"
+                  to="/"
                   className="bg-gold-500 text-navy-950 inline-flex items-center gap-2 rounded-sm px-7 py-4 text-xs font-bold tracking-[0.18em] uppercase shadow-xl"
                 >
                   Get a Free Consultation

@@ -2,16 +2,19 @@ import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 import { NAV_ITEMS, SERVICES, SITE } from "@/lib/site";
-import { Wordmark } from "@/components/brand-mark";
 
 export function Footer() {
   return (
     <footer className="bg-navy-950 text-steel-300">
       <div className="gold-rule" />
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-2 lg:grid-cols-4 lg:px-10">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 pt-16 pb-20 md:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div className="lg:col-span-2">
-          <Wordmark light />
-          <p className="mt-6 max-w-sm text-sm leading-relaxed">
+          <img
+            src="/SereneCollective-white-logo2.png"
+            alt="The Serene Collective"
+            className="h-20 w-auto object-contain"
+          />
+          <p className="mt-4 max-w-sm text-sm leading-relaxed">
             A veteran-operated real estate investment company based in Texas. We
             make investing simple, secure, and impactful   for you and for the
             communities we serve.

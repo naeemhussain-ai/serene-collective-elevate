@@ -113,7 +113,7 @@ export function Navbar() {
             </ul>
             <div className="border-navy-700 border-t p-5">
               <Link
-                to="/contact"
+                to="/"
                 onClick={() => setOpen(false)}
                 className="bg-gold-500 text-navy-950 flex w-full items-center justify-center gap-2 rounded-sm px-5 py-4 text-sm font-bold tracking-wide uppercase"
               >
@@ -131,7 +131,7 @@ function ConsultCta() {
   return (
     <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
       <Link
-        to="/contact"
+        to="/"
         className="bg-gold-500 text-navy-950 hover:shadow-gold-500/30 group inline-flex items-center gap-2 rounded-sm px-5 py-3 text-[0.7rem] font-bold tracking-[0.18em] uppercase transition-shadow hover:shadow-lg"
       >
         Free Consultation
