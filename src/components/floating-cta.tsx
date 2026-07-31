@@ -21,6 +21,7 @@ export function FloatingCta() {
         >
           <Link
             to="/"
+            hash="contact"
             className="bg-navy-900 text-cream-50 ring-gold-500/40 hover:bg-navy-700 flex items-center gap-3 rounded-full py-4 pr-6 pl-5 text-sm font-semibold shadow-2xl ring-1 transition-colors"
           >
             <CalendarCheck className="text-gold-500 h-5 w-5" />

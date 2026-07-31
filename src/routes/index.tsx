@@ -277,7 +277,7 @@ function Index() {
       )}
 
       {/* Contact form CTA */}
-      <section className="bg-cream-50 py-24 lg:py-28">
+      <section id="contact" className="bg-cream-50 py-24 lg:py-28">
         <SectionReveal className="bg-navy-950 mx-auto max-w-5xl rounded-lg px-8 py-16 text-center shadow-2xl sm:px-14">
           <h2 className="text-cream-50 text-3xl leading-tight font-semibold sm:text-4xl">
             Ready to invest with <span className="text-gold-500 italic">peace of mind</span>?
@@ -319,6 +319,7 @@ export function CtaBand() {
           />
           <Link
             to="/"
+            hash="contact"
             className="bg-gold-500 text-navy-950 relative inline-flex items-center gap-2 rounded-sm px-8 py-4 text-xs font-bold tracking-[0.18em] uppercase"
           >
             Get a Free Consultation <ArrowRight className="h-4 w-4" />

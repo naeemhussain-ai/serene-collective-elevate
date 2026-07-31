@@ -10,7 +10,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 pt-16 pb-20 md:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div className="lg:col-span-2">
           <img
-            src="/SereneCollective-white-logo2.png"
+            src={`${import.meta.env.BASE_URL}SereneCollective-white-logo2.png`}
             alt="The Serene Collective"
             className="h-10 w-auto object-contain"
           />
