@@ -1,8 +1,8 @@
 export const SITE = {
   name: "The Serene Collective",
   tagline: "Smart Real Estate Investments, With Peace of Mind",
-  email: "invest@theserenecollective.com",
-  phone: "(214) 555-0148",
+  email: "info@theserenecollective.com",
+  phone: "(346)-698-3786",
   location: "Dallas–Fort Worth, Texas",
 } as const;
 

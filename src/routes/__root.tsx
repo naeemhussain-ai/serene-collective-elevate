@@ -5,13 +5,11 @@ import {
   createRootRouteWithContext,
   useRouter,
   HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
 import { useRouterState } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 
-import appCss from "../styles.css?url";
 import favicon from "@/assets/Key - Favicon .png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "@/components/navbar";
@@ -96,7 +94,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
@@ -119,31 +116,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           description:
             "Veteran-operated real estate investment company based in Texas.",
           areaServed: "Texas, United States",
-          email: "invest@theserenecollective.com",
-          telephone: "(214) 555-0148",
+          email: "info@theserenecollective.com",
+          telephone: "(346)-698-3786",
         }),
       },
     ],
   }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -151,6 +133,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <HeadContent />
       <Navbar />
       <motion.main
         key={pathname}
