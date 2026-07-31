@@ -108,8 +108,6 @@ function Index() {
               />
               <motion.div
                 whileHover={{ scale: 1.03, transition: { duration: 0.4 } }}
-                animate={{ rotate: [0, 1.5, -1.5, 0] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                 className="relative overflow-hidden rounded-md shadow-2xl shadow-[0_25px_90px_-20px_rgba(255,255,255,0.75)]"
               >
                 <motion.img
@@ -137,8 +135,7 @@ function Index() {
           </SectionReveal>
 
           <SectionReveal delay={0.1}>
-            <p className="text-steel-500 eyebrow">About Us</p>
-            <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
+            <h2 className="text-navy-900 text-3xl leading-tight font-semibold sm:text-4xl">
               Veteran-operated. Texas based. Built on service.
             </h2>
             <p className="text-ink-900/75 mt-6 leading-relaxed">

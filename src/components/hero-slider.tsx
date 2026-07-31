@@ -115,7 +115,7 @@ export function HeroSlider() {
         />
       </motion.div>
 
-      <div className="relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-5 pt-32 text-center lg:px-10">
+      <div className="relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-5 pb-24 pt-32 text-center lg:px-10">
         <motion.div
           initial="hidden"
           animate="show"
@@ -181,25 +181,6 @@ export function HeroSlider() {
           </Item>
         </motion.div>
       </div>
-
-      <motion.div
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1, 1, 0] }}
-        transition={{ duration: 6, repeat: Infinity, times: [0, 0.15, 0.85, 1] }}
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-steel-300 text-[0.6rem] font-semibold tracking-[0.3em] uppercase">
-            Scroll
-          </span>
-          <motion.span
-            className="border-gold-500 block border-r border-b"
-            animate={reduce ? { rotate: 45 } : { y: [0, 6, 0], rotate: 45, opacity: [1, 0.4, 1] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            style={{ width: 10, height: 10 }}
-          />
-        </div>
-      </motion.div>
 
       <div className="absolute right-5 bottom-8 z-10 flex items-center justify-center gap-4 lg:right-10">
         <div className="flex gap-2">
