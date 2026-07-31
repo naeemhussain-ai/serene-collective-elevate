@@ -38,7 +38,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="bg-navy-950 relative h-[100svh] min-h-[620px] w-full overflow-hidden"
+      className="bg-navy-950 relative h-[100svh] min-h-[720px] w-full overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={(e) => {
@@ -125,7 +125,7 @@ export function HeroSlider() {
           <Item>
             <motion.div
               key={SLIDES[index]!.logo}
-              className="mb-8 flex items-center justify-center gap-1.5"
+              className="mb-6 flex items-center justify-center gap-2"
               initial={{ opacity: 0, scale: 0.8, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -133,12 +133,12 @@ export function HeroSlider() {
               <img
                 src={SLIDES[index]!.logo}
                 alt="Serene Collective"
-                className={`${SLIDES[index]!.h} w-auto object-contain`}
+                className="h-20 w-auto object-contain"
               />
               <motion.img
                 src={keyImg}
                 alt=""
-                className="h-24 w-auto object-contain drop-shadow-[0_8px_18px_rgba(212,175,55,0.45)]"
+                className="h-20 w-auto object-contain drop-shadow-[0_8px_18px_rgba(212,175,55,0.45)]"
                 animate={reduce ? {} : { y: [0, -6, 0], rotate: [0, 6, 0] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
               />

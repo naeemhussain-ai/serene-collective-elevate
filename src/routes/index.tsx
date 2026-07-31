@@ -14,7 +14,7 @@ import { SectionReveal, StaggerGroup, StaggerItem, Float } from "@/components/se
 import { StatCounter } from "@/components/stat-counter";
 import { RoiCalculator } from "@/components/roi-calculator";
 import { PortfolioShowcase } from "@/components/portfolio-showcase";
-import { Testimonials } from "@/components/testimonials";
+import { ContactForm } from "@/components/contact-form";
 import { SERVICES } from "@/lib/site";
 import aboutCover from "@/assets/about-cover.jpg";
 
@@ -44,6 +44,8 @@ export const Route = createFileRoute("/")({
 });
 
 const ICONS = [Building2, LineChart, Handshake, DoorOpen];
+
+const SHOW_CALCULATOR = false;
 
 function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -247,32 +249,34 @@ function Index() {
         </div>
       </section>
 
-      {/* Calculator */}
-      <section className="bg-cream-50 py-24 lg:py-32">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-10">
-          <SectionReveal>
-            <p className="text-steel-500 eyebrow">Plan Ahead</p>
-            <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
-              See what disciplined investing could return
-            </h2>
-            <p className="text-ink-900/75 mt-6 leading-relaxed">
-              Move the sliders to model a position against our historical portfolio
-              performance. Then let's talk about what a real, personalised plan looks
-              like for your capital and timeline.
-            </p>
-            <Link
-              to="/how-it-works"
-              className="text-navy-900 hover:text-gold-500 group mt-8 inline-flex items-center gap-2 text-sm font-bold tracking-[0.18em] uppercase transition-colors"
-            >
-              See how it works
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </SectionReveal>
-          <SectionReveal delay={0.1}>
-            <RoiCalculator />
-          </SectionReveal>
-        </div>
-      </section>
+      {/* Calculator (hidden, set SHOW_CALCULATOR to true to re-enable) */}
+      {SHOW_CALCULATOR && (
+        <section className="bg-cream-50 py-24 lg:py-32">
+          <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-10">
+            <SectionReveal>
+              <p className="text-steel-500 eyebrow">Plan Ahead</p>
+              <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
+                See what disciplined investing could return
+              </h2>
+              <p className="text-ink-900/75 mt-6 leading-relaxed">
+                Move the sliders to model a position against our historical portfolio
+                performance. Then let's talk about what a real, personalised plan looks
+                like for your capital and timeline.
+              </p>
+              <Link
+                to="/how-it-works"
+                className="text-navy-900 hover:text-gold-500 group mt-8 inline-flex items-center gap-2 text-sm font-bold tracking-[0.18em] uppercase transition-colors"
+              >
+                See how it works
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </SectionReveal>
+            <SectionReveal delay={0.1}>
+              <RoiCalculator />
+            </SectionReveal>
+          </div>
+        </section>
+      )}
 
       {/* Portfolio */}
       <section className="bg-cream-100 py-24 lg:py-32">
@@ -289,22 +293,21 @@ function Index() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="navy-gradient relative overflow-hidden py-24 lg:py-32">
-        <motion.div
-          aria-hidden
-          className="bg-gold-500/15 absolute bottom-0 left-0 h-80 w-80 -translate-x-1/3 rounded-full blur-[120px]"
-          animate={{ y: [0, -50, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
-          <SectionReveal>
-            <Testimonials />
-          </SectionReveal>
-        </div>
+      {/* Contact form CTA */}
+      <section className="bg-cream-50 py-24 lg:py-28">
+        <SectionReveal className="bg-navy-950 mx-auto max-w-5xl rounded-lg px-8 py-16 text-center shadow-2xl sm:px-14">
+          <h2 className="text-cream-50 text-3xl leading-tight font-semibold sm:text-4xl">
+            Ready to invest with <span className="text-gold-500 italic">peace of mind</span>?
+          </h2>
+          <p className="text-steel-300 mx-auto mt-5 max-w-xl leading-relaxed">
+            Book a free, no-pressure consultation. We'll review your goals and tell you
+            honestly whether we're the right fit.
+          </p>
+          <div className="mx-auto mt-10 max-w-2xl text-left">
+            <ContactForm variant="dark" />
+          </div>
+        </SectionReveal>
       </section>
-
-      <CtaBand />
     </>
   );
 }

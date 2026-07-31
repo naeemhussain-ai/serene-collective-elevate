@@ -33,12 +33,6 @@ export const Route = createFileRoute("/about")({
 
 const VALUE_ICONS = [ShieldCheck, Compass, HeartHandshake];
 
-const TEAM = [
-  { name: "Marcus Ellery", role: "Founder & Managing Partner", note: "U.S. Army veteran. 14 years in Texas residential acquisitions." },
-  { name: "Dana Whitfield", role: "Director of Portfolio Operations", note: "Leads leasing, maintenance, and investor reporting." },
-  { name: "Elias Romero", role: "Head of Underwriting", note: "Former commercial credit analyst. Owns the numbers on every deal." },
-];
-
 function About() {
   return (
     <>
@@ -124,39 +118,6 @@ function About() {
                 </StaggerItem>
               );
             })}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      <section className="bg-cream-100 py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <SectionReveal className="max-w-2xl">
-            <p className="text-steel-500 eyebrow">Leadership</p>
-            <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
-              The people accountable for your capital
-            </h2>
-          </SectionReveal>
-
-          <StaggerGroup className="mt-14 grid gap-5 md:grid-cols-3">
-            {TEAM.map((member) => (
-              <StaggerItem key={member.name}>
-                <article className="border-border h-full rounded-md border bg-card p-8 shadow-sm">
-                  <div className="bg-navy-900 text-gold-500 flex h-16 w-16 items-center justify-center rounded-full font-[family-name:var(--font-display)] text-xl">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                  <h3 className="text-navy-900 mt-6 text-xl">{member.name}</h3>
-                  <p className="text-steel-500 mt-2 text-xs font-semibold tracking-[0.18em] uppercase">
-                    {member.role}
-                  </p>
-                  <p className="text-ink-900/70 mt-4 text-sm leading-relaxed">
-                    {member.note}
-                  </p>
-                </article>
-              </StaggerItem>
-            ))}
           </StaggerGroup>
         </div>
       </section>

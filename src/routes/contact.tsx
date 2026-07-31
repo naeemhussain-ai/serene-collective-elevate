@@ -1,24 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { AnimatePresence, motion } from "motion/react";
-import { Mail, Phone, MapPin, CheckCircle2, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
 import { SectionReveal } from "@/components/section-reveal";
+import { ContactForm } from "@/components/contact-form";
 import { SITE } from "@/lib/site";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import heroImg from "@/assets/hero-3.jpg";
 import contactCover from "@/assets/contact-cover.jpg";
 
@@ -43,39 +29,7 @@ export const Route = createFileRoute("/contact")({
   }),
 });
 
-const schema = z.object({
-  firstName: z.string().trim().min(1, "First name is required").max(60),
-  lastName: z.string().trim().min(1, "Last name is required").max(60),
-  email: z.string().trim().email("Enter a valid email address").max(255),
-  phone: z
-    .string()
-    .trim()
-    .min(7, "Enter a valid phone number")
-    .max(25)
-    .regex(/^[0-9+()\-.\s]+$/, "Phone can only contain digits and + ( ) - ."),
-  goals: z
-    .string()
-    .trim()
-    .min(10, "Tell us a little more (10+ characters)")
-    .max(1000, "Please keep it under 1000 characters"),
-});
-
-type FormValues = z.infer<typeof schema>;
-
 function Contact() {
-  const [sent, setSent] = useState(false);
-
-  const form = useForm<FormValues>({
-    resolver: zodResolver(schema),
-    defaultValues: { firstName: "", lastName: "", email: "", phone: "", goals: "" },
-  });
-
-  const onSubmit = async () => {
-    await new Promise((r) => setTimeout(r, 900));
-    setSent(true);
-    form.reset();
-  };
-
   return (
     <>
       <PageHero
@@ -89,141 +43,9 @@ function Contact() {
         <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20 lg:px-10">
           <SectionReveal>
             <div className="border-border rounded-lg border bg-card p-8 shadow-xl sm:p-10">
-              <AnimatePresence mode="wait">
-                {sent ? (
-                  <motion.div
-                    key="success"
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 }}
-                    className="py-14 text-center"
-                  >
-                    <motion.div
-                      initial={{ scale: 0.6, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                    >
-                      <CheckCircle2 className="text-gold-500 mx-auto h-14 w-14" />
-                    </motion.div>
-                    <h2 className="text-navy-900 mt-7 text-2xl">Message received</h2>
-                    <p className="text-ink-900/70 mx-auto mt-4 max-w-sm">
-                      Thank you. A member of our team will be in touch within one
-                      business day.
-                    </p>
-                    <button
-                      onClick={() => setSent(false)}
-                      className="text-navy-900 hover:text-gold-500 mt-8 text-xs font-bold tracking-[0.18em] uppercase transition-colors"
-                    >
-                      Send another message
-                    </button>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="form"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    <h2 className="text-navy-900 text-3xl">Let's Talk</h2>
-                    <div className="gold-rule mt-5 w-24" />
-
-                    <Form {...form}>
-                      <form
-                        onSubmit={form.handleSubmit(onSubmit)}
-                        className="mt-8 space-y-6"
-                        noValidate
-                      >
-                        <div className="grid gap-6 sm:grid-cols-2">
-                          <FormField
-                            control={form.control}
-                            name="firstName"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>First name</FormLabel>
-                                <FormControl>
-                                  <Input autoComplete="given-name" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name="lastName"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Last name</FormLabel>
-                                <FormControl>
-                                  <Input autoComplete="family-name" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                        </div>
-
-                        <div className="grid gap-6 sm:grid-cols-2">
-                          <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Email</FormLabel>
-                                <FormControl>
-                                  <Input type="email" autoComplete="email" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name="phone"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>Phone</FormLabel>
-                                <FormControl>
-                                  <Input type="tel" autoComplete="tel" {...field} />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                        </div>
-
-                        <FormField
-                          control={form.control}
-                          name="goals"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>
-                                Let's talk about your investment goals
-                              </FormLabel>
-                              <FormControl>
-                                <Textarea rows={5} maxLength={1000} {...field} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-
-                        <motion.button
-                          type="submit"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          disabled={form.formState.isSubmitting}
-                          className="bg-navy-900 text-cream-50 hover:bg-navy-700 inline-flex w-full items-center justify-center gap-2 rounded-sm px-8 py-4 text-xs font-bold tracking-[0.18em] uppercase transition-colors disabled:opacity-70 sm:w-auto"
-                        >
-                          {form.formState.isSubmitting && (
-                            <Loader2 className="h-4 w-4 animate-spin" />
-                          )}
-                          Submit
-                        </motion.button>
-                      </form>
-                    </Form>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <h2 className="text-navy-900 text-3xl">Let's Talk</h2>
+              <div className="gold-rule mt-5 w-24" />
+              <ContactForm />
             </div>
           </SectionReveal>
 

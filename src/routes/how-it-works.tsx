@@ -42,6 +42,8 @@ const GROWTH_BARS = [
   { label: "Year 7", value: 122 },
 ];
 
+const SHOW_CALCULATOR = false;
+
 function HowItWorks() {
   const trackRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -187,20 +189,22 @@ function HowItWorks() {
         </div>
       </section>
 
-      {/* Calculator */}
-      <section className="bg-cream-50 py-24 lg:py-32">
-        <div className="mx-auto max-w-3xl px-5 lg:px-10">
-          <SectionReveal className="mb-12 text-center">
-            <p className="text-steel-500 eyebrow">Model It</p>
-            <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
-              Run the numbers yourself
-            </h2>
-          </SectionReveal>
-          <SectionReveal delay={0.1}>
-            <RoiCalculator />
-          </SectionReveal>
-        </div>
-      </section>
+      {/* Calculator (hidden, set SHOW_CALCULATOR to true to re-enable) */}
+      {SHOW_CALCULATOR && (
+        <section className="bg-cream-50 py-24 lg:py-32">
+          <div className="mx-auto max-w-3xl px-5 lg:px-10">
+            <SectionReveal className="mb-12 text-center">
+              <p className="text-steel-500 eyebrow">Model It</p>
+              <h2 className="text-navy-900 mt-5 text-3xl leading-tight font-semibold sm:text-4xl">
+                Run the numbers yourself
+              </h2>
+            </SectionReveal>
+            <SectionReveal delay={0.1}>
+              <RoiCalculator />
+            </SectionReveal>
+          </div>
+        </section>
+      )}
 
       <CtaBand />
     </>
