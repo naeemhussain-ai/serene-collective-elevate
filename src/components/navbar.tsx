@@ -36,7 +36,7 @@ export function Navbar() {
       >
         <Link to="/" className="shrink-0" aria-label="The Serene Collective home">
           <img
-            src="/SereneCollective-logo-1.png"
+            src={`${import.meta.env.BASE_URL}SereneCollective-logo-1.png`}
             alt="The Serene Collective"
             className="h-32 w-auto object-contain"
           />
@@ -88,7 +88,7 @@ export function Navbar() {
             <SheetTitle className="sr-only">Navigation</SheetTitle>
             <div className="border-navy-700 border-b px-6 py-6">
               <img
-                src="/SereneCollective-logo-1.png"
+                src={`${import.meta.env.BASE_URL}SereneCollective-logo-1.png`}
                 alt="The Serene Collective"
                 className="h-32 w-auto object-contain"
               />
@@ -114,6 +114,7 @@ export function Navbar() {
             <div className="border-navy-700 border-t p-5">
               <Link
                 to="/"
+                hash="contact"
                 onClick={() => setOpen(false)}
                 className="bg-gold-500 text-navy-950 flex w-full items-center justify-center gap-2 rounded-sm px-5 py-4 text-sm font-bold tracking-wide uppercase"
               >
@@ -132,6 +133,7 @@ function ConsultCta() {
     <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
       <Link
         to="/"
+        hash="contact"
         className="bg-gold-500 text-navy-950 hover:shadow-gold-500/30 group inline-flex items-center gap-2 rounded-sm px-5 py-3 text-[0.7rem] font-bold tracking-[0.18em] uppercase transition-shadow hover:shadow-lg"
       >
         Free Consultation

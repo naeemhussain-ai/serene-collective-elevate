@@ -8,7 +8,7 @@ import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import keyImg from "@/assets/key-no-bg.png";
 
-const LOGO1 = "/SereneCollective-logo-1.png";
+const LOGO1 = `${import.meta.env.BASE_URL}SereneCollective-logo-1.png`;
 
 const SLIDES = [
   { src: hero1, alt: "Bright high-ceiling living room with tall windows", logo: LOGO1, h: "h-24" },
@@ -164,6 +164,7 @@ export function HeroSlider() {
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                 <Link
                   to="/"
+                  hash="contact"
                   className="bg-gold-500 text-navy-950 inline-flex items-center gap-2 rounded-sm px-7 py-4 text-xs font-bold tracking-[0.18em] uppercase shadow-xl"
                 >
                   Get a Free Consultation

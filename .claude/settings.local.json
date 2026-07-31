@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(npm run *)",
+      "Bash(powershell -Command \"Compress-Archive -Path 'dist/*' -DestinationPath 'serene-deploy.zip' -Force\")"
+    ]
+  }
+}
