@@ -4,7 +4,15 @@
       "Bash(cat)",
       "Read(//tmp/**)",
       "Bash(npm run *)",
-      "Bash(powershell -Command \"Compress-Archive -Path 'dist/*' -DestinationPath 'serene-deploy.zip' -Force\")"
+      "Bash(powershell -Command \"Compress-Archive -Path 'dist/*' -DestinationPath 'serene-deploy.zip' -Force\")",
+      "Bash(unzip -l serene-deploy.zip)",
+      "Bash(unzip -l dist.zip)",
+      "Bash(rm -rf dist)",
+      "Bash(mkdir dist *)",
+      "Bash(unzip -o serene-deploy.zip -d dist)",
+      "Bash(powershell -Command \"Remove-Item -Force dist.zip -ErrorAction SilentlyContinue; Compress-Archive -Path dist\\\\* -DestinationPath dist.zip -Force; Write-Host 'dist.zip updated successfully'\")",
+      "Bash(powershell -Command 'Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::OpenRead\\('\\\\''dist.zip'\\\\''\\).Entries | ForEach-Object { $_.FullName }')",
+      "Bash(powershell -Command ' *)"
     ]
   }
 }
