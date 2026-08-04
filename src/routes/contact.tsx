@@ -85,7 +85,7 @@ function Contact() {
                   <MapPin className="text-gold-500 mt-0.5 h-5 w-5 shrink-0" />
                   <div>
                     <p className="text-gold-500 text-xs tracking-widest uppercase">
-                      Serving
+                      Location
                     </p>
                     <p className="text-cream-50 mt-1">{SITE.location}</p>
                   </div>
