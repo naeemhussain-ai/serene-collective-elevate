@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "Smart Real Estate Investments, With Peace of Mind",
   email: "info@theserenecollective.com",
   phone: "(346)-698-3786",
-  location: "Dallas–Fort Worth, Texas",
+  location: "Houston, Texas",
 } as const;
 
 export type NavItem = { label: string; to: string };

@@ -39,7 +39,7 @@ function About() {
       <PageHero
         image={cover2}
         eyebrow="Who We Are"
-        title="More than investors   neighbors, problem solvers, and stewards of growth."
+        title="More than investors, we are neighbors, problem solvers, and stewards of growth."
         intro="The Serene Collective is a veteran-operated real estate investment company proudly based in Texas, founded on the principles of service, discipline, and integrity."
       />
 
