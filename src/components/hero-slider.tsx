@@ -131,11 +131,11 @@ export function HeroSlider() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              <img
+              {/* <img
                 src={SLIDES[index]!.logo}
                 alt="Serene Collective"
                 className="h-20 w-auto object-contain"
-              />
+              /> */}
               <motion.img
                 src={keyImg}
                 alt=""
